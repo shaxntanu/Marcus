@@ -78,8 +78,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Shantanu Maratha**
 
-- GitHub: [@YOUR_USERNAME](https://github.com/shaxntanu)
-- LinkedIn: [YOUR_LINKEDIN](https://www.linkedin.com/in/shantanu-maratha28)
+- GitHub: [shaxntanu](https://github.com/shaxntanu)
+- LinkedIn: [Shantanu Maratha](https://www.linkedin.com/in/shantanu-maratha28)
 - Email: i.am.shantanu07@gmail.com
 
 ---
