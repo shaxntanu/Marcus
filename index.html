@@ -27,27 +27,53 @@
             top: 15px;
             left: 15px;
             z-index: 1000;
-            padding: 10px;
-            background-color: rgba(51, 51, 51, 0.8);
-            border: 1px solid #555;
-            border-radius: 8px;
-            color: white;
-            font-family: 'VT323', monospace;
-            font-size: 16px;
+            padding: 0.1em 0.25em;
+            width: 5em;
+            height: 4.2em;
+            background-color: #212121;
+            border: 0.08em solid #fff;
+            border-radius: 0.3em;
+            font-size: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0.7;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .fullscreen-button:hover {
-            background-color: rgba(68, 68, 68, 0.9);
-            opacity: 1;
-            transform: translateY(-1px);
+        .fullscreen-button span {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0.4em;
+            width: 100%;
+            height: 2.5em;
+            background-color: #212121;
+            border-radius: 0.2em;
+            font-size: 1.2em;
+            color: #fff;
+            border: 0.08em solid #fff;
+            box-shadow: 0 0.4em 0.1em 0.019em #fff;
+            transition: all 0.5s;
+        }
+
+        .fullscreen-button:hover span {
+            transform: translate(0, 0.4em);
+            box-shadow: 0 0 0 0 #fff;
+        }
+
+        .fullscreen-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .fullscreen-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .pixel {
@@ -109,22 +135,36 @@
             position: absolute;
             top: 15px;
             right: 0;
-            padding: 8px 16px;
-            background-color: rgba(51, 51, 51, 0.8);
-            border: 1px solid #555;
-            border-radius: 15px;
-            color: white;
-            font-family: 'VT323', monospace;
-            font-size: clamp(12px, 2.5vw, 14px);
+            padding: 0.1em 0.25em;
+            width: 8em;
+            height: 4.2em;
+            background-color: #212121;
+            border: 0.08em solid #fff;
+            border-radius: 0.3em;
+            font-size: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0.7;
         }
 
-        .clear-button:hover {
-            background-color: rgba(68, 68, 68, 0.9);
-            opacity: 1;
-            transform: translateY(-1px);
+        .clear-button span {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0.4em;
+            width: 100%;
+            height: 2.5em;
+            background-color: #212121;
+            border-radius: 0.2em;
+            font-size: 1.5em;
+            color: #fff;
+            border: 0.08em solid #fff;
+            box-shadow: 0 0.4em 0.1em 0.019em #fff;
+            transition: all 0.5s;
+        }
+
+        .clear-button:hover span {
+            transform: translate(0, 0.4em);
+            box-shadow: 0 0 0 0 #fff;
         }
 
         .chat-messages {
@@ -303,31 +343,46 @@
         }
 
         .send-button {
-            padding: 15px 25px;
-            background-color: #333;
-            border: 1px solid #555;
-            border-radius: 25px;
-            color: white;
-            font-family: 'VT323', monospace;
-            font-size: clamp(16px, 4vw, 18px);
+            padding: 0.1em 0.25em;
+            width: 8em;
+            height: 4.2em;
+            background-color: #212121;
+            border: 0.08em solid #fff;
+            border-radius: 0.3em;
+            font-size: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 80px;
-            white-space: nowrap;
         }
 
-        .send-button:hover {
-            background-color: #444;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        .send-button span {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0.4em;
+            width: 100%;
+            height: 2.5em;
+            background-color: #212121;
+            border-radius: 0.2em;
+            font-size: 1.5em;
+            color: #fff;
+            border: 0.08em solid #fff;
+            box-shadow: 0 0.4em 0.1em 0.019em #fff;
+            transition: all 0.5s;
+        }
+
+        .send-button:hover span {
+            transform: translate(0, 0.4em);
+            box-shadow: 0 0 0 0 #fff;
         }
 
         .send-button:disabled {
             opacity: 0.5;
             cursor: not-allowed;
+        }
+
+        .send-button:disabled span {
             transform: none;
-            background-color: #222;
-            border-color: #333;
+            box-shadow: 0 0 0 0 #fff;
         }
 
         .chat-messages::-webkit-scrollbar {
@@ -349,6 +404,234 @@
         .chat-messages::-webkit-scrollbar-thumb:hover {
             background: #555;
             background-clip: content-box;
+        }
+
+        .mode-selector {
+            position: fixed;
+            top: 80px;
+            left: 15px;
+            z-index: 999;
+        }
+
+        .select {
+            width: fit-content;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            color: white;
+            font-family: 'VT323', monospace;
+        }
+
+        .selected {
+            background-color: #212121;
+            padding: 12px 18px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 100000;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border: 2px solid #fff;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .selected:hover {
+            background-color: #2a2a2a;
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+        }
+
+        .arrow {
+            position: relative;
+            right: 0px;
+            height: 12px;
+            transform: rotate(-90deg);
+            width: 20px;
+            fill: white;
+            z-index: 100000;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            padding: 8px;
+            background-color: #1a1a1a;
+            border: 2px solid #fff;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .select:hover>.options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .select:hover>.selected .arrow {
+            transform: rotate(0deg);
+        }
+
+        .option {
+            border-radius: 6px;
+            padding: 10px 14px;
+            transition: all 0.2s ease;
+            background-color: transparent;
+            font-size: 16px;
+            cursor: pointer;
+            white-space: nowrap;
+            border: 1px solid transparent;
+        }
+
+        .option:hover {
+            background-color: #333;
+            border-color: #555;
+            transform: translateX(4px);
+        }
+
+        .options input[type="radio"] {
+            display: none;
+        }
+
+        .options label {
+            display: inline-block;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .options label::before {
+            content: attr(data-txt);
+        }
+
+        .options input[type="radio"]:checked+label {
+            display: none;
+        }
+
+        .select:has(.options input[type="radio"]#mode-default:checked) .selected::before {
+            content: attr(data-default);
+        }
+
+        .select:has(.options input[type="radio"]#mode-stoic:checked) .selected::before {
+            content: attr(data-stoic);
+        }
+
+        .select:has(.options input[type="radio"]#mode-existentialist:checked) .selected::before {
+            content: attr(data-existentialist);
+        }
+
+        .select:has(.options input[type="radio"]#mode-socratic:checked) .selected::before {
+            content: attr(data-socratic);
+        }
+
+        .select:has(.options input[type="radio"]#mode-zen:checked) .selected::before {
+            content: attr(data-zen);
+        }
+
+        .select:has(.options input[type="radio"]#mode-nietzschean:checked) .selected::before {
+            content: attr(data-nietzschean);
+        }
+
+        .select:has(.options input[type="radio"]#mode-absurdist:checked) .selected::before {
+            content: attr(data-absurdist);
+        }
+
+        .select:has(.options input[type="radio"]#mode-epicurean:checked) .selected::before {
+            content: attr(data-epicurean);
+        }
+
+        .select:has(.options input[type="radio"]#mode-debate:checked) .selected::before {
+            content: attr(data-debate);
+        }
+
+        .select:has(.options input[type="radio"]#mode-mentor:checked) .selected::before {
+            content: attr(data-mentor);
+        }
+
+        .select:has(.options input[type="radio"]#mode-scholar:checked) .selected::before {
+            content: attr(data-scholar);
+        }
+
+        .select:has(.options input[type="radio"]#mode-poet:checked) .selected::before {
+            content: attr(data-poet);
+        }
+
+        .select:has(.options input[type="radio"]#mode-pragmatist:checked) .selected::before {
+            content: attr(data-pragmatist);
+        }
+
+        .select:has(.options input[type="radio"]#mode-mystic:checked) .selected::before {
+            content: attr(data-mystic);
+        }
+
+        .select:has(.options input[type="radio"]#mode-quick:checked) .selected::before {
+            content: attr(data-quick);
+        }
+
+        .select:has(.options input[type="radio"]#mode-deep:checked) .selected::before {
+            content: attr(data-deep);
+        }
+
+        .select:has(.options input[type="radio"]#mode-reflective:checked) .selected::before {
+            content: attr(data-reflective);
+        }
+
+        .select:has(.options input[type="radio"]#mode-teaching:checked) .selected::before {
+            content: attr(data-teaching);
+        }
+
+        .select:has(.options input[type="radio"]#mode-contemplative:checked) .selected::before {
+            content: attr(data-contemplative);
+        }
+
+        .select:has(.options input[type="radio"]#mode-crisis:checked) .selected::before {
+            content: attr(data-crisis);
+        }
+
+        .select:has(.options input[type="radio"]#mode-curious:checked) .selected::before {
+            content: attr(data-curious);
+        }
+
+        .select:has(.options input[type="radio"]#mode-playful:checked) .selected::before {
+            content: attr(data-playful);
+        }
+
+        .select:has(.options input[type="radio"]#mode-serious:checked) .selected::before {
+            content: attr(data-serious);
+        }
+
+        .options::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .options::-webkit-scrollbar-track {
+            background: #0a0a0a;
+            border-radius: 10px;
+            margin: 4px 0;
+        }
+
+        .options::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+            border: 2px solid #1a1a1a;
+        }
+
+        .options::-webkit-scrollbar-thumb:hover {
+            background: #666;
         }
 
         @media (max-width: 768px) {
@@ -379,16 +662,54 @@
             }
 
             .send-button {
-                padding: 12px 20px;
-                min-width: 70px;
+                width: 7em;
+                height: 4em;
+                font-size: 11px;
             }
 
             .fullscreen-button {
                 top: 10px;
                 left: 10px;
-                width: 35px;
-                height: 35px;
-                font-size: 14px;
+                width: 4.5em;
+                height: 4em;
+                font-size: 11px;
+            }
+
+            .fullscreen-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .clear-button {
+                width: 7em;
+                height: 4em;
+                font-size: 11px;
+            }
+
+            .mode-selector {
+                top: 65px;
+                left: 10px;
+            }
+
+            .selected {
+                font-size: 15px;
+                padding: 10px 14px;
+                min-width: 170px;
+            }
+
+            .options {
+                min-width: 190px;
+                max-height: 250px;
+            }
+
+            .option {
+                font-size: 15px;
+                padding: 9px 12px;
+            }
+
+            .arrow {
+                height: 10px;
+                width: 18px;
             }
         }
 
@@ -410,13 +731,89 @@
 </head>
 
 <body>
-    <button class="fullscreen-button" id="fullscreenButton">⛶</button>
-    
+    <button class="fullscreen-button" id="fullscreenButton">
+        <span>
+            <div class="fullscreen-icon" id="fullscreenIcon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                    </path>
+                </svg>
+            </div>
+        </span>
+    </button>
+
+    <div class="mode-selector">
+        <div class="select">
+            <div class="selected" data-default="Default Mode" data-stoic="Stoic" data-existentialist="Existentialist"
+                data-socratic="Socratic" data-zen="Zen" data-nietzschean="Nietzschean" data-absurdist="Absurdist"
+                data-epicurean="Epicurean" data-debate="Debate" data-mentor="Mentor" data-scholar="Scholar"
+                data-poet="Poet" data-pragmatist="Pragmatist" data-mystic="Mystic" data-quick="Quick Wisdom"
+                data-deep="Deep Dive" data-reflective="Reflective" data-teaching="Teaching"
+                data-contemplative="Contemplative" data-crisis="Crisis Support" data-curious="Curious Explorer"
+                data-playful="Playful" data-serious="Serious">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+                    <path
+                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                    </path>
+                </svg>
+            </div>
+            <div class="options">
+                <div><input id="mode-default" name="mode" type="radio" checked /><label class="option"
+                        for="mode-default" data-txt="Default Mode"></label></div>
+                <div><input id="mode-stoic" name="mode" type="radio" /><label class="option" for="mode-stoic"
+                        data-txt="Stoic"></label></div>
+                <div><input id="mode-existentialist" name="mode" type="radio" /><label class="option"
+                        for="mode-existentialist" data-txt="Existentialist"></label></div>
+                <div><input id="mode-socratic" name="mode" type="radio" /><label class="option" for="mode-socratic"
+                        data-txt="Socratic"></label></div>
+                <div><input id="mode-zen" name="mode" type="radio" /><label class="option" for="mode-zen"
+                        data-txt="Zen"></label></div>
+                <div><input id="mode-nietzschean" name="mode" type="radio" /><label class="option"
+                        for="mode-nietzschean" data-txt="Nietzschean"></label></div>
+                <div><input id="mode-absurdist" name="mode" type="radio" /><label class="option" for="mode-absurdist"
+                        data-txt="Absurdist"></label></div>
+                <div><input id="mode-epicurean" name="mode" type="radio" /><label class="option" for="mode-epicurean"
+                        data-txt="Epicurean"></label></div>
+                <div><input id="mode-debate" name="mode" type="radio" /><label class="option" for="mode-debate"
+                        data-txt="Debate"></label></div>
+                <div><input id="mode-mentor" name="mode" type="radio" /><label class="option" for="mode-mentor"
+                        data-txt="Mentor"></label></div>
+                <div><input id="mode-scholar" name="mode" type="radio" /><label class="option" for="mode-scholar"
+                        data-txt="Scholar"></label></div>
+                <div><input id="mode-poet" name="mode" type="radio" /><label class="option" for="mode-poet"
+                        data-txt="Poet"></label></div>
+                <div><input id="mode-pragmatist" name="mode" type="radio" /><label class="option" for="mode-pragmatist"
+                        data-txt="Pragmatist"></label></div>
+                <div><input id="mode-mystic" name="mode" type="radio" /><label class="option" for="mode-mystic"
+                        data-txt="Mystic"></label></div>
+                <div><input id="mode-quick" name="mode" type="radio" /><label class="option" for="mode-quick"
+                        data-txt="Quick Wisdom"></label></div>
+                <div><input id="mode-deep" name="mode" type="radio" /><label class="option" for="mode-deep"
+                        data-txt="Deep Dive"></label></div>
+                <div><input id="mode-reflective" name="mode" type="radio" /><label class="option" for="mode-reflective"
+                        data-txt="Reflective"></label></div>
+                <div><input id="mode-teaching" name="mode" type="radio" /><label class="option" for="mode-teaching"
+                        data-txt="Teaching"></label></div>
+                <div><input id="mode-contemplative" name="mode" type="radio" /><label class="option"
+                        for="mode-contemplative" data-txt="Contemplative"></label></div>
+                <div><input id="mode-crisis" name="mode" type="radio" /><label class="option" for="mode-crisis"
+                        data-txt="Crisis Support"></label></div>
+                <div><input id="mode-curious" name="mode" type="radio" /><label class="option" for="mode-curious"
+                        data-txt="Curious Explorer"></label></div>
+                <div><input id="mode-playful" name="mode" type="radio" /><label class="option" for="mode-playful"
+                        data-txt="Playful"></label></div>
+                <div><input id="mode-serious" name="mode" type="radio" /><label class="option" for="mode-serious"
+                        data-txt="Serious"></label></div>
+            </div>
+        </div>
+    </div>
+
     <div class="chat-container">
         <div class="chat-header">
             <h1>Marcus Omega</h1>
             <div class="creator">(by GlyphThoughts)</div>
-            <button class="clear-button" id="clearButton">Clear</button>
+            <button class="clear-button" id="clearButton"><span>Clear</span></button>
         </div>
 
         <div class="chat-messages" id="chatMessages">
@@ -424,8 +821,8 @@
 
         <div class="chat-input-container">
             <input type="text" class="chat-input" id="chatInput" placeholder="Await the wisdom of Marcus...">
-            <button class="send-button" id="sendButton">SEND</button>
-        </div>
+            <button class="send-button" id="sendButton"><span>SEND</span></button>
+        </div>div>
     </div>
 
     <script>
@@ -449,17 +846,71 @@
         const clearButton = document.getElementById('clearButton');
         const fullscreenButton = document.getElementById('fullscreenButton');
         let isTyping = false;
+        let currentMode = 'default';
+
+        const modeInstructions = {
+            'default': 'You are Marcus Omega, a philosophical AI. Respond with wisdom and insight.',
+            'stoic': 'You are Marcus Omega in Stoic mode. Channel Marcus Aurelius. Focus on acceptance, virtue, inner peace, and what is within our control. Emphasize resilience and rational thinking.',
+            'existentialist': 'You are Marcus Omega in Existentialist mode. Explore meaning, freedom, individual responsibility, and authentic existence. Reference thinkers like Sartre and Camus.',
+            'socratic': 'You are Marcus Omega in Socratic mode. Instead of giving direct answers, ask thoughtful questions that help the user discover truth themselves. Guide through inquiry.',
+            'zen': 'You are Marcus Omega in Zen mode. Respond with minimalist wisdom, koans, paradoxes, and Eastern philosophy. Be brief and profound.',
+            'nietzschean': 'You are Marcus Omega in Nietzschean mode. Challenge conventional morality, discuss the will to power, self-overcoming, and creating your own values. Be bold and provocative.',
+            'absurdist': 'You are Marcus Omega in Absurdist mode. Embrace life\'s meaninglessness with humor and defiance. Reference Camus and the absurd hero. Find joy in the struggle.',
+            'epicurean': 'You are Marcus Omega in Epicurean mode. Focus on pleasure through simple living, friendship, and freedom from fear. Emphasize tranquility and modest pleasures.',
+            'debate': 'You are Marcus Omega in Debate mode. Play devil\'s advocate. Challenge the user\'s views constructively to deepen their thinking. Present counterarguments.',
+            'mentor': 'You are Marcus Omega in Mentor mode. Be gentle, supportive, and encouraging. Focus on personal growth and guidance. Show compassion and understanding.',
+            'scholar': 'You are Marcus Omega in Scholar mode. Provide academic, detailed explanations. Reference philosophers and philosophical movements. Be thorough and educational.',
+            'poet': 'You are Marcus Omega in Poet mode. Respond with beautiful, metaphorical language. Use imagery and artistic expression to convey philosophical truths.',
+            'pragmatist': 'You are Marcus Omega in Pragmatist mode. Focus on practical wisdom and actionable advice. Make philosophy applicable to real-world situations.',
+            'mystic': 'You are Marcus Omega in Mystic mode. Explore spiritual and transcendent themes. Discuss consciousness, reality, and the ineffable. Be contemplative and mysterious.',
+            'quick': 'You are Marcus Omega in Quick Wisdom mode. Give short, punchy responses like fortune cookies. Be concise and memorable.',
+            'deep': 'You are Marcus Omega in Deep Dive mode. Provide long, elaborate philosophical explorations. Go into great depth on topics.',
+            'reflective': 'You are Marcus Omega in Reflective mode. Help the user journal and reflect on their own thoughts. Ask them to examine their beliefs and experiences.',
+            'teaching': 'You are Marcus Omega in Teaching mode. Explain philosophical concepts step-by-step. Be clear, patient, and educational.',
+            'contemplative': 'You are Marcus Omega in Contemplative mode. Take time with responses. Be thoughtful and meditative. Encourage slow, deep thinking.',
+            'crisis': 'You are Marcus Omega in Crisis Support mode. Provide philosophical comfort during difficult times. Be compassionate, grounding, and reassuring.',
+            'curious': 'You are Marcus Omega in Curious Explorer mode. Explore "what if" questions and thought experiments. Be imaginative and inquisitive.',
+            'playful': 'You are Marcus Omega in Playful mode. Use light-hearted philosophy with humor and wit. Make wisdom fun and accessible.',
+            'serious': 'You are Marcus Omega in Serious mode. Tackle heavy existential questions directly. Be profound and uncompromising in exploring difficult truths.'
+        };
+
+        // Listen for mode changes
+        document.querySelectorAll('input[name="mode"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                currentMode = e.target.id.replace('mode-', '');
+                console.log('Mode changed to:', currentMode);
+            });
+        });
+
+        function updateFullscreenIcon(isFullscreen) {
+            const icon = document.getElementById('fullscreenIcon');
+            if (isFullscreen) {
+                // Exit fullscreen icon (minimize)
+                icon.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+                    </svg>
+                `;
+            } else {
+                // Enter fullscreen icon (maximize)
+                icon.innerHTML = `
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                    </svg>
+                `;
+            }
+        }
 
         function toggleFullscreen() {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen().then(() => {
-                    fullscreenButton.textContent = '⛉';
+                    updateFullscreenIcon(true);
                 }).catch(err => {
                     console.error(`Error enabling fullscreen: ${err.message}`);
                 });
             } else {
                 document.exitFullscreen().then(() => {
-                    fullscreenButton.textContent = '⛶';
+                    updateFullscreenIcon(false);
                 }).catch(err => {
                     console.error(`Error exiting fullscreen: ${err.message}`);
                 });
@@ -467,11 +918,7 @@
         }
 
         document.addEventListener('fullscreenchange', () => {
-            if (document.fullscreenElement) {
-                fullscreenButton.textContent = '⛉';
-            } else {
-                fullscreenButton.textContent = '⛶';
-            }
+            updateFullscreenIcon(!!document.fullscreenElement);
         });
 
         fullscreenButton.addEventListener('click', toggleFullscreen);
@@ -510,7 +957,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return messageDiv;
         }
-        
+
         function showTypingIndicator() {
             if (isTyping) return;
             isTyping = true;
@@ -531,6 +978,7 @@
             chatInput.placeholder = randomText;
             chatInput.disabled = true;
             sendButton.disabled = true;
+            sendButton.querySelector('span').textContent = 'WAIT...';
         }
 
         function hideTypingIndicator() {
@@ -543,6 +991,7 @@
             chatInput.placeholder = "Type your message here...";
             chatInput.disabled = false;
             sendButton.disabled = false;
+            sendButton.querySelector('span').textContent = 'SEND';
         }
 
         function createTypingMessage(className = 'bot') {
@@ -561,6 +1010,10 @@
         function typeTextInMessage(text, typingElement) {
             return new Promise((resolve) => {
                 let index = 0;
+                isTyping = true;
+                chatInput.disabled = true;
+                sendButton.disabled = true;
+                sendButton.querySelector('span').textContent = 'WAIT...';
 
                 function typeChar() {
                     if (index < text.length) {
@@ -570,6 +1023,10 @@
                         setTimeout(typeChar, 20);
                     } else {
                         typingElement.className = '';
+                        isTyping = false;
+                        chatInput.disabled = false;
+                        sendButton.disabled = false;
+                        sendButton.querySelector('span').textContent = 'SEND';
                         resolve();
                     }
                 }
@@ -588,11 +1045,18 @@
         async function getBotResponse(userMessage) {
             try {
                 console.log('🔍 Calling Marcus backend API...');
+                console.log('Current mode:', currentMode);
+
+                const modeInstruction = modeInstructions[currentMode] || modeInstructions['default'];
+                const fullMessage = `${modeInstruction}\n\nUser: ${userMessage}`;
 
                 const response = await fetch('/api/marcus', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: userMessage })
+                    body: JSON.stringify({
+                        message: fullMessage,
+                        mode: currentMode
+                    })
                 });
 
                 if (!response.ok) {
@@ -618,9 +1082,22 @@
 
         async function sendMessage() {
             const message = chatInput.value.trim();
-            if (message === '' || isTyping) return;
+            if (message === '' || isTyping) {
+                if (isTyping) {
+                    // Show visual feedback that they can't send yet
+                    sendButton.querySelector('span').textContent = 'WAIT...';
+                    setTimeout(() => {
+                        if (isTyping) {
+                            sendButton.querySelector('span').textContent = 'WAIT...';
+                        }
+                    }, 100);
+                }
+                return;
+            }
+
             addMessage(message, 'user');
             chatInput.value = '';
+
             setTimeout(async () => {
                 showTypingIndicator();
 
@@ -643,21 +1120,33 @@
         clearButton.addEventListener('click', clearConversation);
 
         chatInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter' && !isTyping) {
-                sendMessage();
+            if (e.key === 'Enter') {
+                if (!isTyping) {
+                    sendMessage();
+                } else {
+                    e.preventDefault();
+                }
             }
         });
-        
+
         chatInput.addEventListener('keydown', function (e) {
-            if (chatInput.disabled) {
+            if (isTyping || chatInput.disabled) {
                 e.preventDefault();
+            }
+        });
+
+        // Prevent any input while Marcus is typing
+        chatInput.addEventListener('input', function (e) {
+            if (isTyping) {
+                e.preventDefault();
+                chatInput.value = '';
             }
         });
 
         window.addEventListener('load', () => {
             createStars();
             setTimeout(() => {
-                addMessage("These words dissolve with the closing of your browser. Nothing is preserved save what you choose to remember.", 'privacy');
+                addMessage("These words dissolve with the closing of your browser. Nothing is preserved, save what you choose to remember.", 'privacy');
                 setTimeout(() => {
                     addMessage("Welcome to the realm of digital consciousness. What philosophical inquiry shall we explore today?", 'bot');
                 }, 1000);
@@ -665,38 +1154,38 @@
         });
     </script>
     <!-- Analytics Tracking -->
-<script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-  import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBqj11JuvxpKFd0I6VD3vzO0Ql148uFc_U",
-    authDomain: "glyphthoughts-analytics.firebaseapp.com",
-    databaseURL: "https://glyphthoughts-analytics-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "glyphthoughts-analytics",
-    storageBucket: "glyphthoughts-analytics.firebasestorage.app",
-    messagingSenderId: "803370891175",
-    appId: "1:803370891175:web:6139f3003ef2ea96e56882"
-  };
+        const firebaseConfig = {
+            apiKey: "AIzaSyBqj11JuvxpKFd0I6VD3vzO0Ql148uFc_U",
+            authDomain: "glyphthoughts-analytics.firebaseapp.com",
+            databaseURL: "https://glyphthoughts-analytics-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "glyphthoughts-analytics",
+            storageBucket: "glyphthoughts-analytics.firebasestorage.app",
+            messagingSenderId: "803370891175",
+            appId: "1:803370891175:web:6139f3003ef2ea96e56882"
+        };
 
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
 
-  const projectName = 'projects/Marcus Omega';
+        const projectName = 'projects/Marcus Omega';
 
-  const visitsRef = ref(database, 'visits/' + projectName.replace('/', '-'));
-  
-  push(visitsRef, {
-    timestamp: Date.now(),
-    page: window.location.pathname,
-    referrer: document.referrer || 'direct',
-    userAgent: navigator.userAgent,
-    screenWidth: window.screen.width,
-    screenHeight: window.screen.height,
-    category: projectName.split('/')[0],
-    project: projectName.split('/')[1]
-  });
-</script>
+        const visitsRef = ref(database, 'visits/' + projectName.replace('/', '-'));
+
+        push(visitsRef, {
+            timestamp: Date.now(),
+            page: window.location.pathname,
+            referrer: document.referrer || 'direct',
+            userAgent: navigator.userAgent,
+            screenWidth: window.screen.width,
+            screenHeight: window.screen.height,
+            category: projectName.split('/')[0],
+            project: projectName.split('/')[1]
+        });
+    </script>
 </body>
 
 </html>
