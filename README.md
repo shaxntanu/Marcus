@@ -78,8 +78,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Shantanu Maratha**
 
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
-- LinkedIn: [YOUR_LINKEDIN](https://linkedin.com/in/YOUR_PROFILE)
+- GitHub: [@YOUR_USERNAME](https://github.com/shaxntanu)
+- LinkedIn: [YOUR_LINKEDIN](https://www.linkedin.com/in/shantanu-maratha28)
 - Email: i.am.shantanu07@gmail.com
 
 ---
@@ -89,14 +89,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Google Gemini AI for providing the powerful language model
 - Inspired by Stoic philosophy and Marcus Aurelius's *Meditations*
 - Built as part of my exploration into AI/ML and philosophical AI applications
-
----
-
-## 📊 Project Stats
-
-![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/marcus-ai?style=social)
-![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/marcus-ai?style=social)
-![GitHub issues](https://img.shields.io/github/issues/YOUR_USERNAME/marcus-ai)
 
 ---
 
