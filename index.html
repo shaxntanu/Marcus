@@ -408,7 +408,7 @@
 
         .mode-selector {
             position: fixed;
-            top: 80px;
+            top: 75px;
             left: 15px;
             z-index: 999;
         }
@@ -424,17 +424,17 @@
 
         .selected {
             background-color: #212121;
-            padding: 12px 18px;
-            border-radius: 8px;
+            padding: 10px 14px;
+            border-radius: 6px;
             position: relative;
             z-index: 100000;
-            font-size: 17px;
+            font-size: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 10px;
             border: 2px solid #fff;
-            min-width: 200px;
+            min-width: 170px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
@@ -687,29 +687,30 @@
             }
 
             .mode-selector {
-                top: 65px;
+                top: 60px;
                 left: 10px;
             }
 
             .selected {
-                font-size: 15px;
-                padding: 10px 14px;
-                min-width: 170px;
+                font-size: 13px;
+                padding: 8px 10px;
+                min-width: 130px;
+                gap: 8px;
             }
 
             .options {
-                min-width: 190px;
+                min-width: 150px;
                 max-height: 250px;
             }
 
             .option {
-                font-size: 15px;
-                padding: 9px 12px;
+                font-size: 13px;
+                padding: 8px 10px;
             }
 
             .arrow {
-                height: 10px;
-                width: 18px;
+                height: 9px;
+                width: 16px;
             }
         }
 
@@ -725,6 +726,34 @@
 
             .chat-header .creator {
                 font-size: 14px;
+            }
+
+            .mode-selector {
+                top: 55px;
+                left: 8px;
+            }
+
+            .selected {
+                font-size: 12px;
+                padding: 7px 9px;
+                min-width: 115px;
+                gap: 6px;
+                border-width: 1.5px;
+            }
+
+            .options {
+                min-width: 135px;
+                max-height: 220px;
+            }
+
+            .option {
+                font-size: 12px;
+                padding: 7px 9px;
+            }
+
+            .arrow {
+                height: 8px;
+                width: 14px;
             }
         }
     </style>
@@ -822,7 +851,7 @@
         <div class="chat-input-container">
             <input type="text" class="chat-input" id="chatInput" placeholder="Await the wisdom of Marcus...">
             <button class="send-button" id="sendButton"><span>SEND</span></button>
-        </div>div>
+        </div>
     </div>
 
     <script>
@@ -976,7 +1005,6 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             const randomText = marcusTypingTexts[Math.floor(Math.random() * marcusTypingTexts.length)];
             chatInput.placeholder = randomText;
-            chatInput.disabled = true;
             sendButton.disabled = true;
             sendButton.querySelector('span').textContent = 'WAIT...';
         }
@@ -989,7 +1017,6 @@
             isTyping = false;
 
             chatInput.placeholder = "Type your message here...";
-            chatInput.disabled = false;
             sendButton.disabled = false;
             sendButton.querySelector('span').textContent = 'SEND';
         }
@@ -1011,7 +1038,6 @@
             return new Promise((resolve) => {
                 let index = 0;
                 isTyping = true;
-                chatInput.disabled = true;
                 sendButton.disabled = true;
                 sendButton.querySelector('span').textContent = 'WAIT...';
 
@@ -1024,7 +1050,6 @@
                     } else {
                         typingElement.className = '';
                         isTyping = false;
-                        chatInput.disabled = false;
                         sendButton.disabled = false;
                         sendButton.querySelector('span').textContent = 'SEND';
                         resolve();
@@ -1129,17 +1154,10 @@
             }
         });
 
+        // Allow typing but prevent Enter key when Marcus is typing
         chatInput.addEventListener('keydown', function (e) {
-            if (isTyping || chatInput.disabled) {
+            if (e.key === 'Enter' && isTyping) {
                 e.preventDefault();
-            }
-        });
-
-        // Prevent any input while Marcus is typing
-        chatInput.addEventListener('input', function (e) {
-            if (isTyping) {
-                e.preventDefault();
-                chatInput.value = '';
             }
         });
 
