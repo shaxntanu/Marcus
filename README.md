@@ -22,7 +22,7 @@ Unlike generic chatbots, Marcus AI is specifically tuned to emulate philosophica
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Demo 
 
 **[Try Marcus AI →](https://glyphthoughts.github.io/Marcus-Landing-Page)**
 
