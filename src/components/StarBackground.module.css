@@ -1,0 +1,48 @@
+.container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: -145%;
+    rotate: -45deg;
+    background: #000;
+    opacity: 0.15;
+    background-image: radial-gradient(3px 80px at 0px 235px, #fff, #0000),
+        radial-gradient(3px 80px at 300px 235px, #fff, #0000),
+        radial-gradient(1px 1px at 150px 117.5px, #fff 100%, #0000 150%),
+        radial-gradient(3px 80px at 0px 150px, #fff, #0000),
+        radial-gradient(3px 80px at 300px 150px, #fff, #0000),
+        radial-gradient(1px 1px at 150px 75px, #fff 100%, #0000 150%),
+        radial-gradient(3px 80px at 0px 204px, #fff, #0000),
+        radial-gradient(3px 80px at 300px 204px, #fff, #0000),
+        radial-gradient(1px 1px at 150px 102px, #fff 100%, #0000 150%),
+        radial-gradient(3px 80px at 0px 179px, #fff, #0000),
+        radial-gradient(3px 80px at 300px 179px, #fff, #0000),
+        radial-gradient(1px 1px at 150px 89.5px, #fff 100%, #0000 150%);
+    background-size: 300px 235px, 300px 235px, 300px 235px,
+        300px 150px, 300px 150px, 300px 150px,
+        300px 204px, 300px 204px, 300px 204px,
+        300px 179px, 300px 179px, 300px 179px;
+    animation: rain 150s linear infinite;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0px 220px, 3px 220px, 151.5px 337.5px,
+            50px 16px, 53px 16px, 201.5px 91px,
+            100px 19px, 103px 19px, 251.5px 121px,
+            150px 31px, 153px 31px, 301.5px 120.5px;
+    }
+
+    to {
+        background-position: 0px 6800px, 3px 6800px, 151.5px 6917.5px,
+            50px 5416px, 53px 5416px, 201.5px 5491px,
+            100px 5119px, 103px 5119px, 251.5px 5221px,
+            150px 9876px, 153px 9876px, 301.5px 9965.5px;
+    }
+}

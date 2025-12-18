@@ -1,0 +1,248 @@
+.container {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.btnCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #1e1e1e;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.settingsBtn {
+    display: block;
+    transition: transform 0.4s ease-in;
+}
+
+.settingsBtn:hover {
+    transform: rotate(60deg);
+}
+
+.settingsBtn:active {
+    animation: rot 1s linear infinite;
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(-100deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 70px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -35px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1a1a1a;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    padding: 0;
+    z-index: 999;
+    min-width: 300px;
+    max-width: 90vw;
+    font-family: 'VT323', monospace;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.modalHeader h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.closeBtn:hover {
+    color: #fff;
+}
+
+.modalContent {
+    padding: 20px;
+}
+
+.settingItem {
+    margin-bottom: 15px;
+}
+
+.settingItem:last-child {
+    margin-bottom: 0;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+}
+
+.checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox:before {
+    content: "";
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.checkbox:checked:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.warning {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    color: #f5a623;
+    line-height: 1.4;
+}
+
+.hint {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.divider {
+    height: 1px;
+    background: #333;
+    margin: 15px 0;
+}
+
+.exportBtn {
+    background: #333;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.exportBtn:hover {
+    background: #444;
+    border-color: #666;
+}
+
+@media (max-width: 480px) {
+    .container {
+        top: 10px;
+        right: 10px;
+    }
+
+    .modal {
+        min-width: 280px;
+    }
+
+    .modalHeader {
+        padding: 12px 15px;
+    }
+
+    .modalContent {
+        padding: 15px;
+    }
+}
