@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useChat } from '@/hooks/useChat';
 import { MessageList } from './MessageList';
 import { ChatInput } from './ChatInput';
-import { ModeSelector } from './ModeSelector';
 import { SettingsButton } from './SettingsButton';
 import { StarBackground } from './StarBackground';
 import styles from './ChatContainer.module.css';
@@ -30,10 +29,11 @@ export function ChatContainer() {
         animationsEnabled={animationsEnabled}
         onAnimationsChange={setAnimationsEnabled}
         messages={displayMessages}
+        currentMode={currentMode}
+        onModeChange={setCurrentMode}
       />
       {animationsEnabled && <StarBackground />}
-      <ModeSelector currentMode={currentMode} onModeChange={setCurrentMode} />
-        <div className={styles.container}>
+      <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Marcus Omega</h1>
           <div className={styles.creator}>(Shantanu X GlyphThoughts)</div>
