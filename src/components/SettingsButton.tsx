@@ -1,18 +1,43 @@
-'use client';
+﻿'use client';
 
-import { useState } from 'react';
-import { DisplayMessage } from '@/types';
-import { modeLabels } from '@/constants/modeInstructions';
+import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
+import { DisplayMessage, PhilosopherMode } from '@/types';
+import { modeLabels, modeDescriptions } from '@/constants/modeInstructions';
 import styles from './SettingsButton.module.css';
+
+const modes: PhilosopherMode[] = [
+  'default', 'stoic', 'existentialist', 'socratic', 'zen', 'nietzschean',
+  'absurdist', 'epicurean', 'debate', 'mentor', 'scholar', 'poet',
+  'pragmatist', 'mystic', 'quick', 'deep', 'reflective', 'teaching',
+  'contemplative', 'crisis', 'curious', 'playful', 'serious',
+];
 
 interface SettingsButtonProps {
   animationsEnabled: boolean;
-  onAnimationsChange: (enabled: boolean) => void;
+  onAnimationsChange: Dispatch<SetStateAction<boolean>>;
   messages: DisplayMessage[];
+  currentMode: PhilosopherMode;
+  onModeChange: Dispatch<SetStateAction<PhilosopherMode>>;
 }
 
-export function SettingsButton({ animationsEnabled, onAnimationsChange, messages }: SettingsButtonProps) {
+export function SettingsButton({ 
+  animationsEnabled, 
+  onAnimationsChange, 
+  messages,
+  currentMode,
+  onModeChange,
+}: SettingsButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const modeListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen && modeListRef.current) {
+      const selectedEl = modeListRef.current.querySelector('[data-selected="true"]');
+      if (selectedEl) {
+        selectedEl.scrollIntoView({ block: 'nearest', inline: 'start' });
+      }
+    }
+  }, [isOpen]);
 
   const exportChat = () => {
     const chatContent = messages
@@ -64,10 +89,29 @@ export function SettingsButton({ animationsEnabled, onAnimationsChange, messages
           <div className={styles.modal}>
             <div className={styles.modalHeader}>
               <h2>Settings</h2>
-              <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>×</button>
+              <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>x</button>
             </div>
 
             <div className={styles.modalContent}>
+              <div className={styles.settingItem}>
+                <span className={styles.label}>Mode</span>
+                <div className={styles.modeList} ref={modeListRef}>
+                  {modes.map((mode) => (
+                    <button
+                      key={mode}
+                      data-selected={currentMode === mode}
+                      className={` ${currentMode === mode ? styles.modeSelected : ''}`}
+                      onClick={() => onModeChange(mode)}
+                    >
+                      <span className={styles.modeName}>{modeLabels[mode]}</span>
+                      <span className={styles.modeDesc}>{modeDescriptions[mode]}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.divider} />
+
               <div className={styles.settingItem}>
                 <label className={styles.checkboxLabel}>
                   <input
@@ -79,7 +123,7 @@ export function SettingsButton({ animationsEnabled, onAnimationsChange, messages
                   <span>Enable animations</span>
                 </label>
                 <p className={styles.warning}>
-                  ⚠️ Animations may cause lag on mobile devices or older hardware
+                  Animations may cause lag on mobile devices
                 </p>
               </div>
 
