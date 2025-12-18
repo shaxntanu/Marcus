@@ -1,6 +1,6 @@
 .container {
     position: fixed;
-    top: 75px;
+    top: 12px;
     left: 15px;
     z-index: 999;
 }
@@ -140,7 +140,7 @@
 
 @media (max-width: 1024px) {
     .container {
-        top: 65px;
+        top: 12px;
         left: 12px;
     }
 
@@ -152,7 +152,7 @@
 
 @media (max-width: 768px) {
     .container {
-        top: 60px;
+        top: 10px;
         left: 10px;
     }
 
@@ -166,12 +166,12 @@
 
     .options {
         min-width: 280px;
-        max-height: 300px;
+        max-height: 50vh;
         top: 50px;
     }
 
     .option {
-        padding: 8px 10px;
+        padding: 10px 12px;
     }
 
     .optionLabel {
@@ -190,27 +190,66 @@
 
 @media (max-width: 480px) {
     .container {
-        top: 50px;
+        top: 8px;
         left: 8px;
     }
 
     .selected {
         font-size: 12px;
-        padding: 6px 8px;
-        min-width: 110px;
+        padding: 7px 10px;
+        min-width: 100px;
         gap: 6px;
         border-width: 1.5px;
     }
 
     .options {
-        min-width: 260px;
-        max-height: 250px;
-        max-width: calc(100vw - 20px);
+        min-width: calc(100vw - 16px);
+        max-height: 60vh;
+        max-width: calc(100vw - 16px);
         top: 45px;
+        left: 0;
     }
 
     .option {
-        padding: 7px 9px;
+        padding: 12px 14px;
+    }
+
+    .optionLabel {
+        font-size: 14px;
+    }
+
+    .optionDesc {
+        font-size: 11px;
+    }
+
+    .arrow {
+        height: 10px;
+        width: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        top: 6px;
+        left: 6px;
+    }
+
+    .selected {
+        font-size: 11px;
+        padding: 6px 8px;
+        min-width: 90px;
+        gap: 5px;
+    }
+
+    .options {
+        min-width: calc(100vw - 12px);
+        max-height: 55vh;
+        max-width: calc(100vw - 12px);
+        top: 40px;
+    }
+
+    .option {
+        padding: 10px 12px;
     }
 
     .optionLabel {
@@ -219,43 +258,5 @@
 
     .optionDesc {
         font-size: 10px;
-    }
-
-    .arrow {
-        height: 8px;
-        width: 14px;
-    }
-}
-
-@media (max-width: 360px) {
-    .container {
-        top: 45px;
-        left: 6px;
-    }
-
-    .selected {
-        font-size: 11px;
-        padding: 5px 7px;
-        min-width: 100px;
-        gap: 5px;
-    }
-
-    .options {
-        min-width: 240px;
-        max-height: 220px;
-        max-width: calc(100vw - 16px);
-        top: 40px;
-    }
-
-    .option {
-        padding: 6px 8px;
-    }
-
-    .optionLabel {
-        font-size: 12px;
-    }
-
-    .optionDesc {
-        font-size: 9px;
     }
 }

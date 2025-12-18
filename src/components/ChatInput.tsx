@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, KeyboardEvent } from 'react';
+import { useState, KeyboardEvent, useRef } from 'react';
 import { typingTexts } from '@/constants/modeInstructions';
 import buttonStyles from './Button.module.css';
 import styles from './ChatInput.module.css';
@@ -12,6 +12,7 @@ interface ChatInputProps {
 
 export function ChatInput({ onSend, isLoading }: ChatInputProps) {
   const [input, setInput] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const placeholder = isLoading
     ? typingTexts[Math.floor(Math.random() * typingTexts.length)]
@@ -30,14 +31,22 @@ export function ChatInput({ onSend, isLoading }: ChatInputProps) {
     }
   };
 
+  const handleFocus = () => {
+    setTimeout(() => {
+      inputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
+  };
+
   return (
     <div className={styles.container}>
       <input
+        ref={inputRef}
         type="text"
         className={styles.input}
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyPress={handleKeyPress}
+        onFocus={handleFocus}
         placeholder={placeholder}
       />
       <button

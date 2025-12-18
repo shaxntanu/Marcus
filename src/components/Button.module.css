@@ -9,6 +9,8 @@
     padding: 10px 16px;
     box-shadow: 0px 6px 0px #999;
     transition: all 0.1s;
+    min-width: 70px;
+    flex-shrink: 0;
 }
 
 .button:active {
@@ -36,4 +38,27 @@
 .small:active {
     box-shadow: 0px 1px 0px #999;
     top: 1px;
+}
+
+@media (max-width: 480px) {
+    .button {
+        font-size: 15px;
+        padding: 10px 14px;
+        min-width: 60px;
+        box-shadow: 0px 4px 0px #999;
+    }
+
+    .button:active {
+        box-shadow: 0px 1px 0px #999;
+        top: 1px;
+    }
+}
+
+@media (max-width: 360px) {
+    .button {
+        font-size: 14px;
+        padding: 9px 12px;
+        min-width: 55px;
+        box-shadow: 0px 3px 0px #999;
+    }
 }

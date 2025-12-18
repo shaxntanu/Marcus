@@ -1,11 +1,14 @@
 .container {
     position: relative;
     z-index: 2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     width: 100vw;
     display: flex;
     flex-direction: column;
     padding: 15px;
+    padding-top: 60px;
 }
 
 .header {
@@ -63,26 +66,7 @@
 @media (max-width: 480px) {
     .container {
         padding: 8px;
-    }
-
-    .header {
-        padding: 10px 0;
-        margin-bottom: 8px;
-    }
-
-    .title {
-        font-size: 22px;
-        letter-spacing: 1.5px;
-    }
-
-    .creator {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 360px) {
-    .container {
-        padding: 6px;
+        padding-top: 50px;
     }
 
     .header {
@@ -92,10 +76,31 @@
 
     .title {
         font-size: 20px;
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
     }
 
     .creator {
         font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 6px;
+        padding-top: 45px;
+    }
+
+    .header {
+        padding: 6px 0;
+        margin-bottom: 5px;
+    }
+
+    .title {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .creator {
+        font-size: 10px;
     }
 }

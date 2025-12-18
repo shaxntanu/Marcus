@@ -1,10 +1,12 @@
 .container {
     padding: 15px 0;
+    padding-bottom: max(15px, env(safe-area-inset-bottom));
     border-top: 1px solid #333;
     display: flex;
     gap: 10px;
     flex-shrink: 0;
     align-items: center;
+    background-color: #000;
 }
 
 .input {
@@ -68,11 +70,12 @@
     .container {
         gap: 6px;
         padding: 10px 0;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
     }
 
     .input {
         padding: 10px 14px;
-        min-height: 42px;
+        min-height: 44px;
         font-size: 16px;
         border-radius: 20px;
     }
@@ -82,12 +85,13 @@
     .container {
         gap: 5px;
         padding: 8px 0;
+        padding-bottom: max(8px, env(safe-area-inset-bottom));
     }
 
     .input {
         padding: 9px 12px;
-        min-height: 40px;
-        font-size: 15px;
+        min-height: 42px;
+        font-size: 16px;
         border-radius: 18px;
     }
 }

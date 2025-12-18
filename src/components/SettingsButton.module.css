@@ -228,14 +228,35 @@
     border-color: #666;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .container {
         top: 10px;
         right: 10px;
     }
 
+    .btnCont {
+        border-radius: 8px;
+    }
+
+    .button {
+        padding: 8px;
+    }
+
+    .settingsBtn {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        top: 8px;
+        right: 8px;
+    }
+
     .modal {
-        min-width: 280px;
+        min-width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
     }
 
     .modalHeader {
@@ -244,5 +265,51 @@
 
     .modalContent {
         padding: 15px;
+    }
+
+    .checkboxLabel {
+        font-size: 15px;
+    }
+
+    .warning {
+        font-size: 12px;
+    }
+
+    .exportBtn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        top: 6px;
+        right: 6px;
+    }
+
+    .button {
+        padding: 6px;
+    }
+
+    .settingsBtn {
+        height: 18px;
+        width: 18px;
+    }
+
+    .modal {
+        min-width: calc(100vw - 24px);
+        max-width: calc(100vw - 24px);
+    }
+
+    .modalHeader {
+        padding: 10px 12px;
+    }
+
+    .modalHeader h2 {
+        font-size: 18px;
+    }
+
+    .modalContent {
+        padding: 12px;
     }
 }

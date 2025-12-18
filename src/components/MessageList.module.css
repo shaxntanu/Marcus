@@ -31,7 +31,32 @@
 
 @media (max-width: 768px) {
     .messageList {
-        padding: 10px 20px 10px 10px;
-        margin-right: 5px;
+        padding: 10px 15px 10px 10px;
+        margin-right: 3px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .messageList {
+        padding: 8px 12px 8px 8px;
+        margin-right: 2px;
+        gap: 10px;
+    }
+
+    .messageList::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .messageList {
+        padding: 6px 10px 6px 6px;
+        margin-right: 0;
+        gap: 8px;
+    }
+
+    .messageList::-webkit-scrollbar {
+        width: 3px;
     }
 }
