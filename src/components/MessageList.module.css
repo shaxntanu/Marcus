@@ -1,11 +1,13 @@
 .messageList {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 15px 25px 15px 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-right: 10px;
+    min-height: 0;
 }
 
 .messageList::-webkit-scrollbar {
