@@ -99,17 +99,3 @@
         font-size: 11px;
     }
 }
-
-
-/* Disable all animations when toggle is off */
-.noAnimations,
-.noAnimations * {
-    animation: none !important;
-    transition: none !important;
-}
-
-.noAnimations *::before,
-.noAnimations *::after {
-    animation: none !important;
-    transition: none !important;
-}

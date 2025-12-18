@@ -31,9 +31,8 @@ export function ChatContainer() {
         onAnimationsChange={setAnimationsEnabled}
         messages={displayMessages}
       />
-      <div className={animationsEnabled ? '' : styles.noAnimations}>
-        {animationsEnabled && <StarBackground />}
-        <ModeSelector currentMode={currentMode} onModeChange={setCurrentMode} />
+      {animationsEnabled && <StarBackground />}
+      <ModeSelector currentMode={currentMode} onModeChange={setCurrentMode} />
         <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Marcus Omega</h1>
@@ -49,7 +48,6 @@ export function ChatContainer() {
         />
 
         <ChatInput onSend={sendMessage} isLoading={isLoading || isTyping} />
-        </div>
       </div>
     </>
   );

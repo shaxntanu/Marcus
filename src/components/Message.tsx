@@ -9,26 +9,29 @@ interface MessageProps {
 }
 
 export function Message({ message }: MessageProps) {
-  const showMeta = message.type === 'bot' && message.mode;
+  const isBotWithMeta = message.type === 'bot' && message.mode;
+  const showTimestamp = message.type === 'bot';
   
   return (
     <div className={`${styles.message} ${styles[message.type]}`}>
       <div>{message.content}</div>
-      <div className={styles.timestamp}>
-        {showMeta && (
-          <>
-            <span className={styles.mode}>{modeLabels[message.mode!]}</span>
-            <span className={styles.separator}>•</span>
-          </>
-        )}
-        {message.timestamp}
-        {showMeta && message.turnsLeft !== undefined && (
-          <>
-            <span className={styles.separator}>•</span>
-            <span className={styles.turnsLeft}>{message.turnsLeft} turns (context reset)</span>
-          </>
-        )}
-      </div>
+      {showTimestamp && (
+        <div className={styles.timestamp}>
+          {isBotWithMeta && (
+            <>
+              <span className={styles.mode}>{modeLabels[message.mode!]}</span>
+              <span className={styles.separator}>•</span>
+            </>
+          )}
+          {message.timestamp}
+          {isBotWithMeta && message.turnsLeft !== undefined && (
+            <>
+              <span className={styles.separator}>•</span>
+              <span className={styles.turnsLeft}>{message.turnsLeft} turns (context reset)</span>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }
