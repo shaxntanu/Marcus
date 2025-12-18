@@ -14,12 +14,12 @@ interface TypingMessageProps {
   skipTyping?: boolean;
 }
 
-export function TypingMessage({ content, timestamp, mode, turnsLeft, onComplete, skipTyping = false }: TypingMessageProps) {
+export function TypingMessage({ content = '', timestamp, mode, turnsLeft, onComplete, skipTyping = false }: TypingMessageProps) {
   const [displayedText, setDisplayedText] = useState(skipTyping ? content : '');
   const [isComplete, setIsComplete] = useState(skipTyping);
 
   useEffect(() => {
-    if (isComplete || skipTyping) return;
+    if (isComplete || skipTyping || !content) return;
 
     let index = 0;
     const interval = setInterval(() => {
@@ -53,7 +53,7 @@ export function TypingMessage({ content, timestamp, mode, turnsLeft, onComplete,
           {turnsLeft !== undefined && (
             <>
               <span className={styles.separator}>•</span>
-              <span className={styles.turnsLeft}>{turnsLeft} turns left</span>
+              <span className={styles.turnsLeft}>{turnsLeft} turns (context reset)</span>
             </>
           )}
         </div>

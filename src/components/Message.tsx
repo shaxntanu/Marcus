@@ -25,7 +25,7 @@ export function Message({ message }: MessageProps) {
         {showMeta && message.turnsLeft !== undefined && (
           <>
             <span className={styles.separator}>•</span>
-            <span className={styles.turnsLeft}>{message.turnsLeft} turns left</span>
+            <span className={styles.turnsLeft}>{message.turnsLeft} turns (context reset)</span>
           </>
         )}
       </div>
