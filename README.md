@@ -12,6 +12,7 @@
 
 - **23 Philosophical Modes** - Switch between different philosophical perspectives including Stoic, Existentialist, Socratic, Zen, Nietzschean, and more
 - **Privacy First** - No data stored. Conversations exist only in your browser session
+- **Export Chat** - Download your conversation as a text file
 - **Typing Animation** - Watch wisdom unfold with elegant typing effects
 - **Context Window** - 10-turn conversation memory for coherent dialogue
 - **Responsive Design** - Beautiful starfield background with mobile-optimized interface
