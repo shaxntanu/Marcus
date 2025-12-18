@@ -1,0 +1,15 @@
+import { ChatContainer } from '@/components/ChatContainer';
+import { StarBackground } from '@/components/StarBackground';
+import { FullscreenButton } from '@/components/FullscreenButton';
+import { MobileWarning } from '@/components/MobileWarning';
+
+export default function Home() {
+  return (
+    <main>
+      <MobileWarning />
+      <FullscreenButton />
+      <StarBackground />
+      <ChatContainer />
+    </main>
+  );
+}

@@ -1,0 +1,101 @@
+.container {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.header {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.title {
+    font-size: clamp(28px, 6vw, 36px);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.creator {
+    font-size: clamp(14px, 3vw, 16px);
+    color: #666;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 12px;
+    }
+
+    .header {
+        padding: 13px 0;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 12px 0;
+        margin-bottom: 10px;
+    }
+
+    .title {
+        font-size: clamp(24px, 5vw, 32px);
+    }
+
+    .creator {
+        font-size: clamp(13px, 2.5vw, 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .header {
+        padding: 10px 0;
+        margin-bottom: 8px;
+    }
+
+    .title {
+        font-size: 22px;
+        letter-spacing: 1.5px;
+    }
+
+    .creator {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 6px;
+    }
+
+    .header {
+        padding: 8px 0;
+        margin-bottom: 6px;
+    }
+
+    .title {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .creator {
+        font-size: 11px;
+    }
+}

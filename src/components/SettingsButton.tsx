@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
 import { DisplayMessage, PhilosopherMode } from '@/types';
-import { modeLabels, modeDescriptions } from '@/constants/modeInstructions';
+import { modeLabels } from '@/constants/modeInstructions';
 import styles from './SettingsButton.module.css';
 
 const modes: PhilosopherMode[] = [
@@ -103,8 +103,7 @@ export function SettingsButton({
                       className={` ${currentMode === mode ? styles.modeSelected : ''}`}
                       onClick={() => onModeChange(mode)}
                     >
-                      <span className={styles.modeName}>{modeLabels[mode]}</span>
-                      <span className={styles.modeDesc}>{modeDescriptions[mode]}</span>
+                      {modeLabels[mode]}
                     </button>
                   ))}
                 </div>
